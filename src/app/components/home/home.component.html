@@ -1,0 +1,5 @@
+<main class="home">
+  <app-searcher (search)="handleSearch($event)"></app-searcher>
+  <app-titles *ngIf="hasTitles" [titleList]="titles"></app-titles>
+  <h3 *ngIf="!hasTitles">No hay resultados</h3>
+</main>

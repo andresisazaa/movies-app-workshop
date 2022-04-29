@@ -1,0 +1,17 @@
+.title-information {
+  margin: 16px;
+}
+
+.title-details {
+  display: flex;
+}
+
+.title-details__image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.title-details__body {
+  margin: 20px 40px;
+}

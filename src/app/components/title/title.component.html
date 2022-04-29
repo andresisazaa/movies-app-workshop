@@ -1,0 +1,35 @@
+<article class="title">
+  <img
+    [src]="imagesUrl + title.image"
+    [alt]="title.name"
+    class="title__image"
+  />
+  <div class="title__body">
+    <h5 class="title__name">{{ title.name }}</h5>
+    <p class="title__release-date">
+      Lanzamiento: {{ title.releaseDate ? title.releaseDate : "Desconocido" }}
+    </p>
+    <p class="title__overview">
+      {{ title.overview | slice: 0:120 }}
+      <span *ngIf="title.overview.length > 120">...</span>
+    </p>
+    <p class="title__vote-average">
+      Calificación:
+
+      <span
+        [ngClass]="{
+          'title__vote-average--low': qualification === 'low',
+          'title__vote-average--medium': qualification === 'medium',
+          'title__vote-average--high': qualification === 'high',
+          'title__vote-average--indeterminate':
+            qualification === 'indeterminate'
+        }"
+        >{{ title.voteAverage }}
+      </span>
+      <span class="title__vote-count">({{ title.voteCount }} votos)</span>
+    </p>
+    <button class="title__details-button" (click)="getTitleDetails()">
+      Ver detalle
+    </button>
+  </div>
+</article>

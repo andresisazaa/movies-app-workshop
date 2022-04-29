@@ -1,0 +1,17 @@
+<article class="review">
+  <h4 class="review__author">{{ review.author }}</h4>
+  <p class="review__content">
+    {{ review.content | slice: 0:300 }}
+    <span *ngIf="review.content.length > 300">...</span>
+  </p>
+  <p class="review__publish-date">
+    Publicado: {{ getDate(review.publishDate) | date }}
+  </p>
+  <p class="review__update-date">
+    Actualizado: {{ getDate(review.lastUpdateDate) | date }}
+  </p>
+  <a class="review__url" [href]="review.url" target="_blank">
+    Ver en Themoviedb
+  </a>
+  <hr />
+</article>

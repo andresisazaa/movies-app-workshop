@@ -1,0 +1,39 @@
+<header class="searcher">
+  <h3>Movies APP</h3>
+  <form
+    class="searcher__form"
+    [formGroup]="searchForm"
+    (ngSubmit)="onFormSubmit()"
+  >
+    <input
+      [formControl]="query"
+      type="text"
+      class="searcher__input"
+      placeholder="Película o serie de TV..."
+    />
+    <div class="searcher__form-field">
+      <label class="searcher__label">
+        <input
+          class="searcher__radio"
+          [formControl]="type"
+          type="radio"
+          value="movie"
+        />
+        Movie
+      </label>
+    </div>
+
+    <div class="searcher__form-field">
+      <label class="searcher__label">
+        <input
+          class="searcher__radio"
+          [formControl]="type"
+          type="radio"
+          value="tv"
+        />
+        TV Serie
+      </label>
+    </div>
+    <button class="searcher__button" type="submit">Buscar</button>
+  </form>
+</header>

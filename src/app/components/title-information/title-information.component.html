@@ -1,0 +1,37 @@
+<section class="title-information">
+  <article *ngIf="titleDetails" class="title-details">
+    <img
+      class="title-details__image"
+      [src]="imagesUrl + titleDetails.image"
+      [alt]="titleDetails.name"
+    />
+    <div class="title-details__body">
+      <h4 class="title-details__name">{{ titleDetails.name }}</h4>
+      <p class="title-details__overview">{{ titleDetails.overview }}</p>
+      <p class="title-details__release-date">
+        Fecha de lanzamiento: {{ titleDetails.releaseDate }}
+      </p>
+      <p class="title-details__vote-average">
+        Calificación: {{ titleDetails.voteAverage }}
+      </p>
+      <p class="title-details__vote-count">
+        {{ titleDetails.voteCount }} votos
+      </p>
+      <p *ngIf="titleDetails.budget" class="title-details__budget">
+        Presupuesto: {{ titleDetails.budget | currency }}
+      </p>
+      <p *ngIf="titleDetails.revenue" class="title-details__revenue">
+        Recaudación: {{ titleDetails.revenue | currency }}
+      </p>
+      <p *ngIf="titleDetails.runtime" class="title-details__runtime">
+        Duración: {{ titleDetails.runtime }} minutos
+      </p>
+    </div>
+  </article>
+  <hr />
+  <div *ngIf="hasReviews" class="title-details__reviews">
+    <h2>Reseñas</h2>
+    <app-reviews [reviews]="titleReviews"></app-reviews>
+  </div>
+  <h2 *ngIf="!hasReviews">Este titulo no tiene reseñas</h2>
+</section>

@@ -1,0 +1,39 @@
+.searcher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  
+}
+
+.searcher__form {
+  display: flex;
+  align-items: center;
+}
+
+.searcher__input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.searcher__label {
+  margin-left: 4px;
+}
+
+.searcher__form-field {
+  padding: 4px 8px 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.searcher__button {
+  height: 40px;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #04aa6d;
+}
